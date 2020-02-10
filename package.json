@@ -146,9 +146,31 @@
       "react-app"
     ]
   },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 120
+  },
+  "husky": {
+      "hooks": {
+          "pre-commit": "lint-staged",
+          "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      }
+  },
+  "lint-staged": {
+      "**/src/**/*.{js,jsx}": [
+          "./node_modules/.bin/eslint --max-warnings 0 --ext .js,.jsx --fix",
+          "git add"
+      ]
+  },
+  "commitlint": {
+      "extends": [
+          "@commitlint/config-conventional"
+      ]
+  },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
     "html-loader": "^0.5.5",
     "husky": "^4.2.1",
     "less-loader": "^5.0.0",
