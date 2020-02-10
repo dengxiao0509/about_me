@@ -103,7 +103,7 @@ Client credentials允许client获取用于访问client自己所有的资源的ac
 又叫**Authorization code flow**。正如上面所说，由于access token从来没有在浏览器端传递过，而只是通过传递中间层的authentication code，所以保密性较好。然而，一些使用这种模式的应用会在本地保存一个refresh token，以便在难以与用户浏览器交互获取新access token时“离线”获取用户数据。这会造成安全隐患，尽管可以实现同时获取多个用户数据。
 
 授权流程图如下：
-![](../../styles/img/oauth1.png)
+<!-- ![](../../styles/img/oauth1.png) -->
 
 
 ### 授权步骤
@@ -202,7 +202,7 @@ access_token有效时间短，一方面降低了黑客拿到明文token后操作
 - OAuth client在浏览器运行（通过JS,Flash等编写的）
 - 浏览器是非常值得信任的，几乎不担心access会被泄露
 
-![](../../styles/img/oauth2.png)
+<!-- ![](../../styles/img/oauth2.png) -->
 
 
 ### 授权步骤
@@ -224,7 +224,7 @@ access_token有效时间短，一方面降低了黑客拿到明文token后操作
 与服务端应用授权类似。
 
 ## Resource Owner Password Flow
-![](../../styles/img/oauth3.png)
+<!-- ![](../../styles/img/oauth3.png) -->
 
 这种方式是用用户的账号和密码去换取access token，因此安全性与之前两种方式相比较低，需要第三方应用是完全可信任的。
 
@@ -262,7 +262,7 @@ access_token有效时间短，一方面降低了黑客拿到明文token后操作
 这种模式下，client只需要提供自己的client账户信息，就可以换取access token，而不需要用户的授权。比如在client自己拥有这些数据（例如调用API提供商的云存储服务），或者用户已经通过常规认证流程之外的方式授权过的情况下。甚至都不需要发任何token，只需要看请求API的client是否有权限就行。
 
 这种模式下，需要保证client的账户信息高度保密。client即可以通过在POST请求中添加账户信息来进行身份验证，也可通过公钥、私钥或者SSL/TLS的方式在authorization server进行身份验证。
-![](../../styles/img/oauth4.png)
+<!-- ![](../../styles/img/oauth4.png) -->
 
 
 ### 授权步骤

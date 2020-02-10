@@ -10,5 +10,5 @@ export const LinkComponent = (
 )
 
 export const RouteComponent = (
-    <Route path="/tech/:title" component={Index} />
+    <Route path="/tech/:title?" component={Index} />
 )

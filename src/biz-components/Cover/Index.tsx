@@ -37,7 +37,7 @@ const Cover = () => {
                 </Row>
             </div>
             <ArticleList content={techContent} articleGroupTitle="正经工程师"></ArticleList>
-            <ArticleList content={tripContent} articleGroupTitle="业务旅行家"></ArticleList>
+            <ArticleList content={tripContent} articleGroupTitle="业余旅行家"></ArticleList>
         </React.Fragment>
     )
 }

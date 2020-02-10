@@ -147,11 +147,14 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "html-loader": "^0.5.5",
     "husky": "^4.2.1",
     "less-loader": "^5.0.0",
     "markdown-loader": "^5.1.0",
     "marked": "^0.8.0",
+    "pretty": "^2.0.0",
     "typescript": "^3.7.5"
   }
 }
