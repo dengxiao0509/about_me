@@ -69,9 +69,9 @@ const resolveModule = (resolveFn, filePath) => {
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
-  appBuild: resolveApp('docs'),
+  appBuild: resolveApp('dist'),
   appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
+  appHtml: resolveApp('src/html/index.html'),
   appIndexJs: resolveModule(resolveApp, 'src/pages/index'),
   appEntries: {
     index: resolveModule(resolveApp, 'src/pages/index'),

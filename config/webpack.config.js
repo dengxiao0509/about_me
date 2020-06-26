@@ -175,13 +175,13 @@ module.exports = function(webpackEnv) {
       // There will be one main bundle, and one file per asynchronous chunk.
       // In development, it does not produce real files.
       filename: isEnvProduction
-        ? `about_me/js/[name].[contenthash:8].js`
+        ? `js/[name].[contenthash:8].js`
         : isEnvDevelopment && `js/bundle.js`,
       // TODO: remove this when upgrading to webpack 5
       futureEmitAssets: true,
       // There are also additional JS chunk files if you use code splitting.
       chunkFilename: isEnvProduction
-        ? `about_me/js/[name].[contenthash:8].chunk.js`
+        ? `js/[name].[contenthash:8].chunk.js`
         : isEnvDevelopment && `js/[name].chunk.js`,
       // We inferred the "public path" (such as / or /my-project) from homepage.
       // We use "/" in development.
@@ -371,7 +371,7 @@ module.exports = function(webpackEnv) {
               loader: require.resolve('url-loader'),
               options: {
                 limit: imageInlineSizeLimit,
-                name: 'about_me/media/[name].[hash:8].[ext]',
+                name: 'media/[name].[hash:8].[ext]',
               },
             },
             // Process application JS with Babel.
@@ -528,7 +528,7 @@ module.exports = function(webpackEnv) {
               // by webpacks internal loaders.
               exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
               options: {
-                name: 'about_me/media/[name].[hash:8].[ext]',
+                name: 'media/[name].[hash:8].[ext]',
               },
             },
             // ** STOP ** Are you adding a new loader?
@@ -543,9 +543,16 @@ module.exports = function(webpackEnv) {
         Object.assign(
           {},
           {
+            filename: path.resolve(__dirname, '..', 'index.html'),
+            template: paths.appHtml,
+            chunks: ['index'],
+            inject: false
+          },
+          {
             filename: 'index.html',
             template: paths.appHtml,
-            chunks: ['index']
+            chunks: ['index'],
+            inject: false
           },
           // isEnvProduction
           //   ? {
@@ -565,16 +572,16 @@ module.exports = function(webpackEnv) {
           //   : undefined
         )
       ),
-      new HtmlWebpackPlugin(
-        Object.assign(
-          {},
-          {
-            filename: 'techs.html',
-            template: paths.appHtml,
-            chunks: ['techs']
-          },
-        )
-      ),
+      // new HtmlWebpackPlugin(
+      //   Object.assign(
+      //     {},
+      //     {
+      //       filename: 'techs.html',
+      //       template: paths.appHtml,
+      //       chunks: ['techs']
+      //     },
+      //   )
+      // ),
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       // https://github.com/facebook/create-react-app/issues/5358
@@ -613,8 +620,8 @@ module.exports = function(webpackEnv) {
         new MiniCssExtractPlugin({
           // Options similar to the same options in webpackOptions.output
           // both options are optional
-          filename: 'about_me/css/[name].[contenthash:8].css',
-          chunkFilename: 'about_me/css/[name].[contenthash:8].chunk.css',
+          filename: 'css/[name].[contenthash:8].css',
+          chunkFilename: 'css/[name].[contenthash:8].chunk.css',
         }),
       // Generate an asset manifest file with the following content:
       // - "files" key: Mapping of all asset filenames to their corresponding

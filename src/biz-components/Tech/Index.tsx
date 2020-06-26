@@ -42,7 +42,6 @@ const Tech = (props: { match: { params: { title: string; }; }; }) => {
         console.log(e)
     }
 
-    console.log('render')
     const articleHtml = require(`articles/tech/${title}.md`)
     return (
         <div className="tech-content">

@@ -3,18 +3,12 @@ import * as ReactDOM from 'react-dom';
 import '../index.css';
 // import * as serviceWorker from './serviceWorker';
 import '../styles/css/index.less'
-
 // import loadable from '@loadable/component'
 // import pMinDelay from 'p-min-delay'
 import { Row, Col } from 'antd'
 import {
     Link,
 } from "react-router-dom";
-import {
-  TransitionGroup,
-  CSSTransition
-} from "react-transition-group"
-
 import { LinkComponent as TechLink, RouteComponent as TechRoute } from 'biz-components/Tech/route'
 import { LinkComponent as TripLink, RouteComponent as TripRoute } from 'biz-components/Trip/route'
 import { LinkComponent as CoverLink, RouteComponent as CoverRoute } from 'biz-components/Cover/route'
@@ -71,7 +65,7 @@ const App = () => {
               <Row type="flex" align="middle" className="nav">
                   <Col span={7} offset={1}>
                     <Link to={'/'} className="navbar-brand">
-                      <img className="logo" src="/img/logo.png" width="50" />
+                      <img className="logo" src={`/img/logo.png`} width="50" />
                       <span>小世界</span>
                     </Link>
                   </Col>

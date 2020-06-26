@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { ContentCategoryInterface, ContentItemInterface } from 'interfaces'
 import { Row, Col } from 'antd'
-import config from 'config/base'
 
 interface ArticleListPropsInterface {
     articleGroupTitle: string,
@@ -32,14 +31,14 @@ const ArticleList = (props: ArticleListPropsInterface) => {
                         getArticles().map(article => {
                             return (
                                 <Col span={hideMoreBtn ? 24 : 12}>
-                                    <a href={`${config.appRootUrl}/${article.link}`}>
+                                    <a href={article.link}>
                                         <div className="article-card">
                                             <Row>
                                                 {
                                                     !hideImage ? (
                                                         <Col span={8}>
                                                             <div className="article-img">
-                                                                <img src={`${config.appRootUrl}/${article.img}`} />
+                                                                <img src={article.img} />
                                                             </div>
                                                         </Col>
                                                     ) : null
