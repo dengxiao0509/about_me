@@ -26,7 +26,7 @@
     -->
     <title>小世界</title>
     <% htmlWebpackPlugin.files.css.forEach(item => {%>
-      <link href="dist/<%= item %>" rel="stylesheet" />
+      <link href="<%= item %>" rel="stylesheet" />
     <% }) %>
   </head>
   <body>
@@ -43,7 +43,7 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <% htmlWebpackPlugin.files.js.forEach(item => {%>
-        <script src="dist/<%= item %>"></script>
+        <script src="<%= item %>"></script>
     <% }) %>
     <script>
       var _mtac = {};
