@@ -25,6 +25,8 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>小世界</title>
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/vs2015.min.css">
     <% htmlWebpackPlugin.files.css.forEach(item => {%>
       <link href="<%= item %>" rel="stylesheet" />
     <% }) %>
@@ -45,6 +47,8 @@
     <% htmlWebpackPlugin.files.js.forEach(item => {%>
         <script src="<%= item %>"></script>
     <% }) %>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <script>
       var _mtac = {};
       (function() {
