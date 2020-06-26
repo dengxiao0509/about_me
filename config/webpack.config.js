@@ -543,12 +543,6 @@ module.exports = function(webpackEnv) {
         Object.assign(
           {},
           {
-            filename: path.resolve(__dirname, '..', 'index.html'),
-            template: paths.appHtml,
-            chunks: ['index'],
-            inject: false
-          },
-          {
             filename: 'index.html',
             template: paths.appHtml,
             chunks: ['index'],
