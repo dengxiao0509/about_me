@@ -1,0 +1,47 @@
+{
+  "files": {
+    "index.css": "/css/index.3c6a60e6.chunk.css",
+    "index.js": "/js/index.1584a5bf.chunk.js",
+    "index.css.map": "/css/index.3c6a60e6.chunk.css.map",
+    "index.js.map": "/js/index.1584a5bf.chunk.js.map",
+    "runtime-index.js": "/js/runtime-index.1f0d0327.js",
+    "runtime-index.js.map": "/js/runtime-index.1f0d0327.js.map",
+    "runtime-techs.js": "/js/runtime-techs.7d393124.js",
+    "runtime-techs.js.map": "/js/runtime-techs.7d393124.js.map",
+    "techs.css": "/css/techs.c3152da8.chunk.css",
+    "techs.js": "/js/techs.1679ad90.chunk.js",
+    "techs.css.map": "/css/techs.c3152da8.chunk.css.map",
+    "techs.js.map": "/js/techs.1679ad90.chunk.js.map",
+    "vendors~index.css": "/css/vendors~index.31c49ec0.chunk.css",
+    "vendors~index.js": "/js/vendors~index.392daeb9.chunk.js",
+    "vendors~index.css.map": "/css/vendors~index.31c49ec0.chunk.css.map",
+    "vendors~index.js.map": "/js/vendors~index.392daeb9.chunk.js.map",
+    "vendors~index~techs.js": "/js/vendors~index~techs.8997fa89.chunk.js",
+    "vendors~index~techs.js.map": "/js/vendors~index~techs.8997fa89.chunk.js.map",
+    "index.html": "/index.html",
+    "media/Supervising-Controller.jpg": "/media/Supervising-Controller.186a9fa6.jpg",
+    "media/elm-pattern.png": "/media/elm-pattern.2b7d17d3.png",
+    "media/flux.png": "/media/flux.2d1f1090.png",
+    "media/mvc-2.png": "/media/mvc-2.3d2abf5c.png",
+    "media/standard-MVP.jpg": "/media/standard-MVP.919384ed.jpg",
+    "media/standard-mvc.jpg": "/media/standard-mvc.f3e75d89.jpg",
+    "precache-manifest.0f56a863688c226ec858515f9d8d4b01.js": "/precache-manifest.0f56a863688c226ec858515f9d8d4b01.js",
+    "service-worker.js": "/service-worker.js"
+  },
+  "entrypoints": {
+    "index": [
+      "js/runtime-index.1f0d0327.js",
+      "js/vendors~index~techs.8997fa89.chunk.js",
+      "css/vendors~index.31c49ec0.chunk.css",
+      "js/vendors~index.392daeb9.chunk.js",
+      "css/index.3c6a60e6.chunk.css",
+      "js/index.1584a5bf.chunk.js"
+    ],
+    "techs": [
+      "js/runtime-techs.7d393124.js",
+      "js/vendors~index~techs.8997fa89.chunk.js",
+      "css/techs.c3152da8.chunk.css",
+      "js/techs.1679ad90.chunk.js"
+    ]
+  }
+}

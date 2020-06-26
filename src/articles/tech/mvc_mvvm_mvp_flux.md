@@ -1,3 +1,5 @@
+# MV*与Flux模式简析
+
 > 本文介绍并对比了 MVC、MVP、MVVM 几种框架模型，并以 Flux、React、Redux、Elm、Mbox、Reactive Programming 等举例分析其模型实质。
 
 # MVC
@@ -14,7 +16,7 @@
 
 #### 1、Controller 通知 View 更新
 
-![](./img/standard-mvc.jpg)
+<img src="./img/standard-mvc.jpg" width="800">
 
 当用户操作 UI 界面时，Controller 负责响应用户事件，更新 Model并通知 View 更新，View 再从 Model 中 query 获取数据。
 
@@ -35,13 +37,13 @@ MVC中，controller 是有业务逻辑的，虽然我们强调"fat model, skinny
 MVP 是 MVC 的变种，目的是为了更好地隔离 Model 和 View。在 MVP 中，Presenter 可以理解为松散的 Controller，包含了视图的 UI 业务逻辑，所有从视图发出的事件，都会通过代理给 Presenter 进行处理；同时，Presenter 也通过视图暴露的接口与其进行通信。Presenter 负责对模型的更新和读取，而 Model 改变时，可以将信息通知给 Observer Presenter。
 
 
-![](./img/standard-MVP.jpg)
+<img src="./img/standard-MVP.jpg" width="800">
 
 假设 View 是完全被动的，并且不再根据模型来更新本身的内容，即被动示图（Passive View），那么View就不再依赖 Model，它的更新完全由 Presenter 来间接控制。因为视图层不依赖其他任何层级，也就最大化了视图层的可测试性，同时也将视图层和模型层进行了合理的分离，两者不再相互依赖。
 
 与被动视图中状态同步都需要显式的操作不同，监督控制器（Supervising Controller）就将部分需要显式同步的操作变成了隐式的：
 
-![](./img/Supervising-Controller.jpg)
+<img src="./img/Supervising-Controller.jpg" width="800">
 
 视图层接管了一部分视图逻辑，主要内容就是同步简单的视图和模型的状态；而监督控制器就需要负责响应用户的输入以及一部分更加复杂的视图、模型状态同步工作。对于用户输入的处理，监督控制器的做法与标准 MVP 中的 Presenter 完全相同；但是对于视图、模型的同步工作，监督控制器会尽可能地将所有简单的属性以数据绑定的形式声明在视图层中。通过这种方式能够减轻监督控制器的负担，减少其中简单的代码，将一部分逻辑交由视图进行处理；这样也就导致了视图同时可以被 Presenter 和数据绑定两种方式更新，相比于被动视图，监督控制器的方式也降低了视图的可测试性和封装性。
 
@@ -237,6 +239,7 @@ MVVM 架构模式是微软在 2005 年诞生的，实际上它就是基于 PM �
                   
 Mbox 的具体用法及概念我们在这里就不详述了，关键是看看它的设计思想。通过观察者模式的运用，mbox也算是借鉴了响应式编程的思想，但是mbox中的store并不是immutable的，是可以直接改变其字段值的，同时store的定义也是使用class来封装data和操作方法，这一点与函数式思想不符。而通过观察者模式，Model 更新自动触发 ViewModel 及 View 更新，同时View事件的响应函数在ViewModel层级上更新 Model，因此也可以说是符合   MVVM 模式的。
 
+
 # MVP 和 MVVM 模式的不足
 
 以上所述，MVP 和 MVVM 是比较适合前端的设计模式，可以实现较好的 M 和 V 分离，但是仍然存在一些可以优化的地方：
@@ -254,7 +257,7 @@ Mbox 的具体用法及概念我们在这里就不详述了，关键是看看它
 # Flux
 关于Flux的基础概念我们就不具体展开了，其模式示意图如下：
 
-![](./img/flux.png)
+<img src="./img/flux.png" width="800">
 
 Flux 是 Facebook 提出的一种前端架构，结合 ReactJS，可以很方便地实现一套数据的双向绑定，从而实现 MVVM 或 MVP。Flux 中的 store 对应 Model，View 不变（Flux中的view更加依赖React这种渲染机制），controller-views 类似 presenter，不过仅局限于 P 更新 V 的过程（类似上面提到的React组件props/state变化会自动rerender更新View的机制）。
 

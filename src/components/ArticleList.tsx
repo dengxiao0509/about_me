@@ -30,7 +30,7 @@ const ArticleList = (props: ArticleListPropsInterface) => {
                     {
                         getArticles().map(article => {
                             return (
-                                <Col span={hideMoreBtn ? 24 : 12}>
+                                <Col span={hideMoreBtn ? 24 : 12} className="abstract-block">
                                     <a href={article.link}>
                                         <div className="article-card">
                                             <Row>
