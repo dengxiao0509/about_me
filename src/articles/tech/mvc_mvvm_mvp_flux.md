@@ -16,12 +16,12 @@
 
 #### 1、Controller 通知 View 更新
 
-<img src="./img/standard-mvc.jpg" width="800">
+<img src="/img/articles/standard-mvc.jpg" width="800">
 
 当用户操作 UI 界面时，Controller 负责响应用户事件，更新 Model并通知 View 更新，View 再从 Model 中 query 获取数据。
 
 #### 2、Model 通知 View 更新
-![](./img/mvc-2.png)
+<img src="/img/articles/mvc-2.png" width="800">
 
 在这种定义中，数据流是单向的，同时 View 的更新是由 Model 控制的，不直接与 Controller 交互。
 
@@ -37,13 +37,13 @@ MVC中，controller 是有业务逻辑的，虽然我们强调"fat model, skinny
 MVP 是 MVC 的变种，目的是为了更好地隔离 Model 和 View。在 MVP 中，Presenter 可以理解为松散的 Controller，包含了视图的 UI 业务逻辑，所有从视图发出的事件，都会通过代理给 Presenter 进行处理；同时，Presenter 也通过视图暴露的接口与其进行通信。Presenter 负责对模型的更新和读取，而 Model 改变时，可以将信息通知给 Observer Presenter。
 
 
-<img src="./img/standard-MVP.jpg" width="800">
+<img src="/img/articles/standard-MVP.jpg" width="800">
 
 假设 View 是完全被动的，并且不再根据模型来更新本身的内容，即被动示图（Passive View），那么View就不再依赖 Model，它的更新完全由 Presenter 来间接控制。因为视图层不依赖其他任何层级，也就最大化了视图层的可测试性，同时也将视图层和模型层进行了合理的分离，两者不再相互依赖。
 
 与被动视图中状态同步都需要显式的操作不同，监督控制器（Supervising Controller）就将部分需要显式同步的操作变成了隐式的：
 
-<img src="./img/Supervising-Controller.jpg" width="800">
+<img src="/img/articles/Supervising-Controller.jpg" width="800">
 
 视图层接管了一部分视图逻辑，主要内容就是同步简单的视图和模型的状态；而监督控制器就需要负责响应用户的输入以及一部分更加复杂的视图、模型状态同步工作。对于用户输入的处理，监督控制器的做法与标准 MVP 中的 Presenter 完全相同；但是对于视图、模型的同步工作，监督控制器会尽可能地将所有简单的属性以数据绑定的形式声明在视图层中。通过这种方式能够减轻监督控制器的负担，减少其中简单的代码，将一部分逻辑交由视图进行处理；这样也就导致了视图同时可以被 Presenter 和数据绑定两种方式更新，相比于被动视图，监督控制器的方式也降低了视图的可测试性和封装性。
 
@@ -257,7 +257,7 @@ Mbox 的具体用法及概念我们在这里就不详述了，关键是看看它
 # Flux
 关于Flux的基础概念我们就不具体展开了，其模式示意图如下：
 
-<img src="./img/flux.png" width="800">
+<img src="/img/articles/flux.png" width="800">
 
 Flux 是 Facebook 提出的一种前端架构，结合 ReactJS，可以很方便地实现一套数据的双向绑定，从而实现 MVVM 或 MVP。Flux 中的 store 对应 Model，View 不变（Flux中的view更加依赖React这种渲染机制），controller-views 类似 presenter，不过仅局限于 P 更新 V 的过程（类似上面提到的React组件props/state变化会自动rerender更新View的机制）。
 
@@ -295,7 +295,7 @@ Elm 是一种函数式的编程语言，可以用来开发网页或 web app，�
 	    ]
 	    
 在 Elm 语言中，天然实现了一种所谓的“Elm Architecture”，其原理大致如下图所示：
-![](./img/elm-pattern.png)
+<img src="/img/articles/elm-pattern.png" width="800">
 
 在 Elm Architecture 中，存在三个核心的概念：
 

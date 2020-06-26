@@ -53,4 +53,4 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__["render"](react__WEBPACK_IMPORTED_MODULE_
 /***/ })
 
 },[["./src/pages/techs.tsx","runtime-techs","vendors~index~techs"]]]);
-//# sourceMappingURL=techs.1679ad90.chunk.js.map
+//# sourceMappingURL=techs.2c3ee3ec.chunk.js.map

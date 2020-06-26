@@ -37,7 +37,7 @@ HTTP协议是Hyper Text Transfer Protocol（超文本传输协议）的缩写,�
 HTTP使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。URL（uniform resource locator）是一种特殊类型的URI，包含了用于查找某个资源的足够的信息。
 
 HTTP Request 请求格式如下：
-<img src="./img/http1.png" width="800" />
+<img src="/img/articles/http1.png" width="800" />
 
 
 Response 的格式与上面类似，只是第一行由请求方法和状态码构成。
@@ -124,7 +124,7 @@ Response 的格式与上面类似，只是第一行由请求方法和状态码�
 
 	要分帧，就涉及到帧流控制和优先级控制。一个request对应一个id，这样一个连接上可以有多个request，每个连接的request可以随机的混杂在一起，接收方可以根据request的 id将request再归属到各自不同的服务端请求里面。同时，为了不阻塞重要的请求，对于不同的请求，也有优先级的划分。
 
-<img src="./img/http2.jpg" width="800" />
+<img src="/img/articles/http2.jpg" width="800" />
 
 
 2. **支持压缩header**
@@ -147,7 +147,7 @@ HTTP／1.1 在 1.0 的基础上通过长连接来减小 TCP 连接维护的成�
 
 HTTP 协议传输的数据都是未加密的，也就是明文的，因此使用 HTTP 协议传输隐私信息非常不安全，为了保证这些隐私数据能加密传输，于是网景公司设计了SSL（Secure Sockets Layer）协议用于对 HTTP 协议传输的数据进行加密，从而就诞生了 HTTPS。简单来说，HTTPS协议是由 HTTP + SSL/TLS 协议构建的可进行加密传输、身份认证的网络协议，要比 HTTP 协议安全。
 
-<img src="./img/http3.jpg"  />
+<img src="/img/articles/http3.jpg"  />
 
 ### SSL协议和TLS协议
 
@@ -158,7 +158,7 @@ SSL协议位于 TCP/IP 协议与各种应用层协议之间，为数据通讯提
 TLS（Transport Layer Security，传输层安全）：其前身是 SSL，它最初的几个版本（SSL 1.0、SSL 2.0、SSL 3.0）由网景公司开发，1999年从 3.1 开始被 IETF 标准化并改名，发展至今已经有 TLS 1.0、TLS 1.1、TLS 1.2 三个版本。SSL3.0和TLS1.0由于存在安全漏洞，已经很少被使用到。目前使用最广泛的是TLS 1.1、TLS 1.2。
 
 ### 握手过程
-<img src="./img/http4.jpg" width="800" />
+<img src="/img/articles/http4.jpg" width="800" />
 
 
 首先客户端向服务端发起 HTTPS 请求，告诉服务器 SSL 协议的版本号，以及支持的加密套件等信息。
@@ -190,7 +190,7 @@ TLS（Transport Layer Security，传输层安全）：其前身是 SSL，它最�
 同时，拿到证书的服务端，会保存该证书的私钥，绝对不能泄露。
 
 **验证证书链有效性**
-<img src="./img/http5.png" width="800" />
+<img src="/img/articles/http5.png" width="800" />
 
 根证书是预先安装在操作系统中的，被浏览器信任。同时，根证书也是自签名的。
 
